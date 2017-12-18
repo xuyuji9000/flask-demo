@@ -14,7 +14,8 @@ connection = pymysql.connect(
 
 @app.route('/')
 def main():
-    return render_template('index.html')
+    variables = {"company_name": "前进精密"}
+    return render_template('index.html', company_name=variables["company_name"])
 
 @app.route('/db')
 def db():
