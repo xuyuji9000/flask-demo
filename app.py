@@ -12,6 +12,10 @@ connection = pymysql.connect(
     cursorclass=pymysql.cursors.DictCursor
 )
 
+@app.route('/')
+def main():
+    return render_template('index.html')
+
 @app.route('/db')
 def db():
     with connection.cursor() as cursor:
